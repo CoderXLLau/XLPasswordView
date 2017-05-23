@@ -18,18 +18,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *button = [[UIButton alloc] init];
-    button.frame = CGRectMake(100, 100, 200, 50);
-    button.backgroundColor = [UIColor grayColor];
-    [button setTitle:@"点击展示XLPasswordView" forState:UIControlStateNormal];
-    [button sizeToFit];
-    [button addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    {
+        UIButton *button = [[UIButton alloc] init];
+        button.frame = CGRectMake(100, 100, 200, 50);
+        button.backgroundColor = [UIColor grayColor];
+        [button setTitle:@"点击展示系统键盘XLPasswordView" forState:UIControlStateNormal];
+        [button sizeToFit];
+        [button addTarget:self action:@selector(showSystemKeyboard) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+    {
+        UIButton *button = [[UIButton alloc] init];
+        button.frame = CGRectMake(100, 200, 200, 50);
+        button.backgroundColor = [UIColor grayColor];
+        [button setTitle:@"点击展示自定义键盘XLPasswordView" forState:UIControlStateNormal];
+        [button sizeToFit];
+        [button addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
 }
 
 - (void)show
 {
     XLPasswordView *passwordView = [XLPasswordView passwordView];
+    passwordView.delegate = self;
+    [passwordView showPasswordInView:self.view];
+}
+
+- (void)showSystemKeyboard
+{
+    XLPasswordView *passwordView = [XLPasswordView passwordViewWithKeyboardType:XLPasswordViewKeyboardTypeSystem];
     passwordView.delegate = self;
     [passwordView showPasswordInView:self.view];
 }

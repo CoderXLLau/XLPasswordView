@@ -266,6 +266,9 @@
     if ([self.delegate respondsToSelector:@selector(passwordInputView:inputPassword:)]) {
         [self.delegate passwordInputView:self inputPassword:self.password];
     }
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 #pragma mark    -   public method
@@ -312,5 +315,15 @@
     self.inputCount = self.inputCount;
     [self textChange:self.textField];
 }
+
+//- (BOOL)becomeFirstResponder
+//{
+//    return [self.textField becomeFirstResponder];
+//}
+
+//- (BOOL)resignFirstResponder
+//{
+//    return [self.textField resignFirstResponder];
+//}
 
 @end

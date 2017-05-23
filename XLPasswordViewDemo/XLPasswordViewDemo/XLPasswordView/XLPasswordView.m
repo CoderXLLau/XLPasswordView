@@ -46,6 +46,7 @@
  *  忘记密码label
  */
 @property (nonatomic , weak) UILabel *forgetPasswordLabel;
+@property (nonatomic , assign ) XLPasswordViewKeyboardType keyboardType;
 
 @end
 
@@ -65,6 +66,30 @@
     return _passwordNumberS;
 }
 
+- (void)setKeyboardType:(XLPasswordViewKeyboardType)keyboardType
+{
+    _keyboardType = keyboardType;
+    switch (keyboardType) {
+        case XLPasswordViewKeyboardTypeRandom:
+        {
+            self.randomKeyboard.hidden = NO;
+            [self.passwordInputView resignFirstResponder];
+            self.passwordInputView.userInteractionEnabled = NO;
+        }
+            break;
+        case XLPasswordViewKeyboardTypeSystem:
+        {
+            self.randomKeyboard.hidden = YES;
+            [self.passwordInputView becomeFirstResponder];
+            self.passwordInputView.userInteractionEnabled = YES;
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark    -   initial
 
 - (void)awakeFromNib
@@ -76,6 +101,15 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        [self initial];
+    }
+    return self;
+}
+
+- (instancetype)initWithKeyboardType:(XLPasswordViewKeyboardType)keyboardType
+{
+    if (self = [super init]) {
+        self.keyboardType = keyboardType;
         [self initial];
     }
     return self;
@@ -152,6 +186,7 @@
         passwordInputView.xl_height = gridWidth;
         passwordInputView.xl_centerX = XLScreenW * 0.5;
         passwordInputView.xl_y = 72 * xl_autoSizeScaleY;
+        passwordInputView.delegate = self;
         passwordInputView;
     });
     [self.inputContainerView addSubview:self.passwordInputView];
@@ -186,6 +221,8 @@
         [self.inputContainerView addSubview:randomKeyboard];
         randomKeyboard;
     });
+    
+    self.keyboardType = self.keyboardType;
 }
 
 - (void)layoutSubviews
@@ -272,12 +309,33 @@
     }
 }
 
+#pragma mark    -   XLPasswordInputViewDelegate
+
+- (void)passwordInputView:(XLPasswordInputView *)passwordInputView inputPassword:(NSString *)password
+{
+    if (password.length <= kPasswordLenght) {
+        if ([self.delegate respondsToSelector:@selector(passwordView:passwordTextDidChange:)]) {
+            [self.delegate passwordView:self passwordTextDidChange:password];
+        }
+    }
+    if (password.length  == kPasswordLenght) {
+        if ([self.delegate respondsToSelector:@selector(passwordView:didFinishInput:)]) {
+            [self.delegate passwordView:self didFinishInput:password];
+        }
+    }
+}
+
 
 #pragma mark    -   public method
 
 + (instancetype)passwordView
 {
-    XLPasswordView *password = [[self alloc] init];
+    return [self passwordViewWithKeyboardType:XLPasswordViewKeyboardTypeRandom];
+}
+
++ (instancetype)passwordViewWithKeyboardType:(XLPasswordViewKeyboardType)keyboardType
+{
+    XLPasswordView *password = [[self alloc] initWithKeyboardType:keyboardType];
     return password;
 }
 

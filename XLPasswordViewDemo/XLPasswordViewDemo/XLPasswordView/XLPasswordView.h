@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XLPasswordViewTypeDefine.h"
 
 @class XLPasswordView;
 
@@ -38,11 +39,15 @@
  *  delegate
  */
 @property (nonatomic , weak) id <XLPasswordViewDelegate>delegate;
+/** 键盘类型 */
+@property (nonatomic , assign , readonly) XLPasswordViewKeyboardType keyboardType;
 
 /**
  *  快速创建方法
  */
 + (instancetype)passwordView;
++ (instancetype)passwordViewWithKeyboardType:(XLPasswordViewKeyboardType)keyboardType;
+
 /**
  *  展示
  *

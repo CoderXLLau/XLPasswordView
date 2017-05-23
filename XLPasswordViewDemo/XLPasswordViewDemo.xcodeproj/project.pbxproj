@@ -46,6 +46,7 @@
 		5382A26F1D33B20E003A6651 /* XLPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPasswordView.m; sourceTree = "<group>"; };
 		5382A2701D33B20E003A6651 /* XLRandomKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLRandomKeyboard.h; sourceTree = "<group>"; };
 		5382A2711D33B20E003A6651 /* XLRandomKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLRandomKeyboard.m; sourceTree = "<group>"; };
+		7623B6891ED3F256005B88F7 /* XLPasswordViewTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPasswordViewTypeDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +112,7 @@
 				5382A2701D33B20E003A6651 /* XLRandomKeyboard.h */,
 				5382A2711D33B20E003A6651 /* XLRandomKeyboard.m */,
 				5382A26D1D33B20E003A6651 /* XLPasswordView.bundle */,
+				7623B6891ED3F256005B88F7 /* XLPasswordViewTypeDefine.h */,
 			);
 			path = XLPasswordView;
 			sourceTree = "<group>";
@@ -358,6 +360,7 @@
 				5382A24D1D33B19D003A6651 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
