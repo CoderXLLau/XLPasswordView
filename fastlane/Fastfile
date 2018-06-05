@@ -1,0 +1,48 @@
+desc 'XLUpdatePodTool 航道用来自动化升级维护私有库'
+lane :XLUpdatePodTool do |options|
+
+ # 外界输入的tag标签的值
+    tagNum = options[:tag]
+
+  # 输入的podspec的名字
+    specName = options[:specName]
+
+  # 输入的 repo name
+    repoName = options[:repo]
+
+    podspecPath = "#{specName}.podspec"
+
+  # 更新内容 updateMessage  TODO完善判空
+    updateMessage = options[:updateMessage]
+
+# 航道上需要执行的操作
+# 具体action到 https://docs.fastlane.tools/actions 上面查找
+# 这里的路径以仓库根目录为准
+
+# 1、修改spec文件为即将发布的版本（修改s.version，s.description等）
+  version_bump_podspec(path: podspecPath, version_number: tagNum)
+
+
+
+# 3、提交本地仓库代码至远程仓库
+git_add(path: ".")
+git_commit(path: ".", message: updateMessage)
+push_to_git_remote
+
+
+# 4、打标签，并提交至远程
+add_git_tag(
+  tag: tagNum,
+  message: tagNum + "(fastlane)" + updateMessage 
+)
+push_git_tags
+
+
+# 5、验证spec，并提至私有索引库
+pod_lib_lint(allow_warnings: true)
+# 因为本地索引库repo的名字是基本上不会去改变的，所以这里直接写死 XLSpecs
+# podspec的名字需要由外界传入
+pod_push(path: podspecPath, repo: repoName, allow_warnings: true)
+
+
+end

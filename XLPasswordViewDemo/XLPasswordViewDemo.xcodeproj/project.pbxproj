@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5369A6CA20C673A90093DD12 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5369A6C720C673A90093DD12 /* LICENSE */; };
+		5369A6CB20C673A90093DD12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5369A6C820C673A90093DD12 /* README.md */; };
+		5369A6CC20C673A90093DD12 /* XLPasswordView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5369A6C920C673A90093DD12 /* XLPasswordView.podspec */; };
 		5382A2391D33B19D003A6651 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382A2381D33B19D003A6651 /* main.m */; };
 		5382A23C1D33B19D003A6651 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382A23B1D33B19D003A6651 /* AppDelegate.m */; };
 		5382A23F1D33B19D003A6651 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382A23E1D33B19D003A6651 /* ViewController.m */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5369A6C720C673A90093DD12 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
+		5369A6C820C673A90093DD12 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
+		5369A6C920C673A90093DD12 /* XLPasswordView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = XLPasswordView.podspec; path = ../../../XLPasswordView.podspec; sourceTree = "<group>"; };
 		5382A2341D33B19D003A6651 /* XLPasswordViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLPasswordViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5382A2381D33B19D003A6651 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5382A23A1D33B19D003A6651 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5369A6C620C673870093DD12 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				5369A6C720C673A90093DD12 /* LICENSE */,
+				5369A6C820C673A90093DD12 /* README.md */,
+				5369A6C920C673A90093DD12 /* XLPasswordView.podspec */,
+			);
+			path = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
 		5382A22B1D33B19D003A6651 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +95,7 @@
 		5382A2361D33B19D003A6651 /* XLPasswordViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5369A6C620C673870093DD12 /* Podspec Metadata */,
 				5382A2631D33B20E003A6651 /* XLPasswordView */,
 				5382A23A1D33B19D003A6651 /* AppDelegate.h */,
 				5382A23B1D33B19D003A6651 /* AppDelegate.m */,
@@ -161,6 +178,7 @@
 				TargetAttributes = {
 					5382A2331D33B19D003A6651 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = QC83AGNAJ7;
 					};
 				};
 			};
@@ -187,10 +205,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5369A6CB20C673A90093DD12 /* README.md in Resources */,
 				5382A2471D33B19D003A6651 /* LaunchScreen.storyboard in Resources */,
 				5382A2441D33B19D003A6651 /* Assets.xcassets in Resources */,
+				5369A6CC20C673A90093DD12 /* XLPasswordView.podspec in Resources */,
 				5382A2421D33B19D003A6651 /* Main.storyboard in Resources */,
 				5382A2761D33B20E003A6651 /* XLPasswordView.bundle in Resources */,
+				5369A6CA20C673A90093DD12 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QC83AGNAJ7;
 				INFOPLIST_FILE = XLPasswordViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tohoapp.XLPasswordViewDemo;
@@ -334,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QC83AGNAJ7;
 				INFOPLIST_FILE = XLPasswordViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tohoapp.XLPasswordViewDemo;

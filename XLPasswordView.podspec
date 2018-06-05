@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'XLPasswordView'
-    s.version      = '1.0.5'
+    s.version      = '0.9.1'
     s.summary      = 'An easy password input view'
     s.homepage     = 'https://github.com/CoderXLLau/XLPasswordView'
     s.license      = 'MIT'
