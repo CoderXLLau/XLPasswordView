@@ -9,6 +9,7 @@
 一个简单的密码输入组件,自己写的随机数字键盘,UI类似支付宝支付密码界面,使用简单,只需要三行代码就可以 , 代理方法也很简单明了
 
 
+
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1455933-e3f013f10aa2a647.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
